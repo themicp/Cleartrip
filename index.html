@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ClearTrip</title>
+        <link href='css/style.css' rel='stylesheet' />
+        <meta charset='utf-8'> 
+        <link rel='icon' href='favicon.ico'>
+    </head>
+    <body>
+        <div id='toolbar_top'>
+            <div>
+                <a href='.'><img src='images/logo.png' alt='logo' id='toolbar_logo' /></a>
+                <div id='share_buttons'>
+                    <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/twitter-api-announce" data-counturl="http://groups.google.com/group/twitter-api-announce" data-lang="en" data-count="vertical">Tweet</a>
+                    <div class="fb-like" data-href="http://developers.facebook.com/docs/reference/plugins/like" data-send="false" data-layout="box_count" data-width="450" data-show-faces="true"></div>
+                    <div class="g-plus" data-action="share" data-annotation="vertical-bubble" data-height="60"></div>
+                </div>
+            </div>
+        </div>
+        <header>
+            <div id='header_main'>
+                <div id='loading'>
+                    <strong>Loading..</strong>
+                </div>
+                <strong>Why you'll love the new Cleartrip</strong>
+            </div>
+        </header>
+        <div id='mainnav_container'>
+            <ul id='main_nav'>
+                <li class='active' id='loveflight'>Love flights</li>
+                <li id='lovehotel'>Love hotels</li>
+            </ul>
+        </div>
+        <div id='content'>
+            <div id='search' class='loveflight'>
+                <div class='outer'>
+                    <h2>Search faster</h2>
+                    <ul class='nav'>
+                        <li class='active swaptab'><span>Swap</span></li>
+                        <li class='suggestionstab'><span>Airport suggestions</span></li>
+                        <li class='recentsearchtab'><span>Recent Search</span></li>
+                    </ul>
+                    <img src='images/border.png' alt='border'/>
+                    <div id='swap_content' class='search_content active'>
+                        <h3>We let you swap destinations at the click of a button</h3>
+                        <div id='swapimg'>
+                            <img src='' width='750' class='preview async' alt='swap' url='swapimg' />
+                            <img src='images/swap/image1.png' class='noshadow' alt='swap' id='swap_image1' />
+                            <img src='images/swap/arrows.png' class='noshadow' alt='swap' id='swap_arrows' />
+                            <img src='images/swap/image2.png' class='noshadow' alt='swap' id='swap_image2' />
+                            <div class='shadow'></div>
+                        </div>
+                    </div>
+                    <div id='suggestions_content' class='search_content'>
+                        <h3>We know your destination before you do and automatically suggest airports.</h3>
+                        <div id='suggestionsimg'>
+                            <img src='' width='750' class='preview async' alt='suggestions' url='suggestionsimg' />
+                            <div id='sugg_type'><img src='images/suggestions/type.png' class='noshadow' alt='suggestions' /></div>
+                            <img src='images/suggestions/options.png' class='noshadow' id='sugg_opt' alt='suggestions' />
+                            <div class='shadow'></div>
+                        </div>
+                    </div>
+                    <div id='search_content' class='search_content'>
+                        <h3>We know where you like travelling by saving you recent searches.</h3>
+                        <div id='searchimg'>
+                            <img src='' width='750' class='preview async' alt='search' id='searchbase' url='searchimg' />
+                            <img src='images/recent/recent.png' class='noshadow' alt='recent' id='recent' />
+                            <div class='shadow'></div>
+                        </div>
+                    </div>
+                    <div class='viewport' id='swapview'></div>
+                </div>
+            </div>
+            <div id='rightflight' class='loveflight'>
+                <div class='outer'>
+                    <h2>Find the right flight</h2>
+                    <ul class='nav'>
+                        <li class='active visualtab'><span>Visual indicators</span></li>
+                        <li class='faretab'><span>Know your fare</span></li>
+                        <li class='recommendtab'><span>Recommended flights</span></li>
+                    </ul>
+                    <div class='rightflight_content active' id='visual_content'>
+                        <div>
+                            <h3>We keep you well informed about everything from layovers to seats left.</h3>
+                        </div>
+                        <div id='rightflightimg'>
+                            <img src='' alt='visual indicators' url='rightflightimg' class='async' />
+                            <div id='rightmagnifier' class='magnifier'>
+                            </div>
+                        </div>
+                    </div>
+                    <div class='rightflight_content' id='fare_content'>
+                        <div>
+                            <h3>We warn you in advance about cancellation charges.</h3>
+                        </div>
+                        <div id='fareimg'>
+                            <img src='' alt='fares' url='fareimg' class='async' />
+                            <div id='faremagnifier' class='magnifier'></div>
+                        </div>
+                    </div>
+                    <div class='rightflight_content' id='recommend_content' >
+                        <div>
+                            <h3>We weed out flights that are irrelevant and unreasonable.</h3>
+                        </div>
+                        <div id='recommendedimg'>
+                            <img src='' alt='recommended' url='rightflightimg' class='async' />
+                            <div id='recommagnifier' class='magnifier'></div>
+                        </div>
+                    </div>
+                    <img src='images/flight_shadow.png' alt='shadow' />
+                    <div class='viewport' id='rightflightview'></div>
+                </div>
+            </div>
+            <div id='wallet' class='loveflight'>
+                <div class='outer'>
+                    <h2>Watch your wallet</h2>
+                    <ul class='nav'>
+                        <li class='active calendartab'><span>Mini-calendar</span></li>
+                        <li class='alertstab'><span>Fare Alerts</span></li>
+                    </ul>
+                    <div class='wallet_content active'>
+                        <div>
+                            <h3>We tell you which day of the month to travel and save money.</h3>
+                        </div>
+                        <img src='' alt='calendar' id='calendarbase' url='calendarimg' class='async' width='513'/>
+                        <img src='' alt='calendar' id='calendarover' url='calendarover' class='async' />
+                        <div class='overflowgradient'></div>
+                        <img src='images/shadow2.png' alt='shadow' class='walletshadow' />
+                    </div>
+                    <div class='wallet_content' id='fares_alert'>
+                        <div>
+                            <h3>We track flight fares for you and help you save big.</h3>
+                        </div>
+                        <img src='' alt='alerts' url='alertsimg' class='async' id='alertsbase' />
+                        <img src='' alt='alerts' id='faresover' url='alertsover' class='async' />
+                        <div class='overflowgradient'></div>
+                        <img src='images/shadow2.png' alt='shadow' class='walletshadow' />
+                    </div>
+                </div>
+            </div>
+            <div id='booking' class='loveflight'>
+                <div class='outer'>
+                    <h2>More than just booking</h2>
+                    <ul class='nav'>
+                        <li class='active pricewatchtab'><span>Pricewatch</span></li>
+                        <li class='rescheduletab'><span>Reschedule or cancel online</span></li>
+                        <li class='passestab'><span>Paperless travel</span></li>
+                    </ul>
+                    <div class='booking_content active' id='pricewatch'>
+                        <h3>Get your money back when airfares fall - automatically.</h3>
+                        <img src='' width='750' class='preview async' alt='pricewatch' url='pricewatchimg' id='pricewatchimg' />
+                        <div class='shadow'></div>
+                    </div>
+                    <div class='booking_content' id='reschedule'>
+                        <h3>No more painful calls to customer care.</h3>
+                        <img src='' width='750' class='preview async' alt='reschedule' url='rescheduleimg' id='rescheduleimg' />
+                        <img src='' class='async' alt='reschedule' url='changeflights' id='changeflights' />
+                        <div class='shadow'></div>
+                    </div>
+                    <div class='booking_content' id='passes_content'>
+                        <h3>Travel paperless with Passbook, and save trees while you're at it.</h3>
+                        <img src='' width='750' class='preview async' alt='passes' url='passesimg' id='passesimg' />
+                        <img src='' alt='phone' id='phone_overlay' url='iphone' class='async' />
+                        <div class='shadow'></div>
+                    </div>
+                    <div class='viewport' id='bookingview'></div>
+                </div>
+            </div>
+            <div id='slider' class='lovehotel'>
+                <div class='outer'>
+                    <h2>Like your travel agent - only better</h2>
+                    <ul id='slider_capt'>
+                        <li><h3>More people trust Cleartrip every day.</h3></li>
+                        <li><h3>No matter where you're going, we have a hotel for you.</h3></li>
+                        <li><h3>The price you'll see is the price you'll pay. No surprises.</h3></li>
+                        <li><h3>Found a lower price somewhere else? We'll pay the difference.</h3></li>
+                        <li><h3>Is your room different from what we said? We'll change it right away.</h3></li>
+                        <li><h3>Select from the widest choice of hotels available.</h3></li>
+                    </ul>
+                    <ul id='thumbs'>
+                        <li id='slide1'></li>
+                        <li id='slide2'></li>
+                        <li id='slide3'></li>
+                        <li id='slide4'></li>
+                        <li id='slide5'></li>
+                        <li id='slide6'></li>
+                    </ul>
+                    <ul id='greybar'>
+                        <li class='slide1 dot'></li>
+                        <li class='slide2 dot'></li>
+                        <li class='slide3 dot'></li>
+                        <li class='slide4 dot'></li>
+                        <li class='slide5 dot'></li>
+                        <li class='slide6 dot'></li>
+                        <li class='slideline'></li>
+                    </ul>
+                    <div id='orangewrapper'>
+                        <ul id='orangebar'>
+                            <li class='slide1 dot'></li>
+                            <li class='slide2 dot'></li>
+                            <li class='slide3 dot'></li>
+                            <li class='slide4 dot'></li>
+                            <li class='slide5 dot'></li>
+                            <li class='slide6 dot'></li>
+                            <li class='slideline'></li>
+                        </ul>
+                    </div>
+                </div>
+                <img src='images/slider/slider_shadow.png' alt='shadow' id='slideshadow' />
+            </div>
+            <div id='smartsearch' class='lovehotel' >
+                <div class='outer'>
+                    <h2>Smarter Search</h2>
+                    <ul class='nav'>
+                        <li class='active suggestions1tab'><span>Search Suggestions</span></li>
+                        <li class='filtertab'><span>Deals Filter</span></li>
+                        <li class='notop quickeystab'><span>Quickeys</span></li>
+                    </ul>
+                    <div class='smart_content active' id='sugg_content'>
+                        <div>
+                            <h3>Narrow your search before start searching.</h3>
+                        </div>
+                        <img src='' alt='search suggestions' url='suggestions1img' class='async' />
+                        <div id='suggmagnifier' class='magnifier'>
+                        </div>
+                    </div>
+                    <div class='smart_content' id='deals_content'>
+                        <div>
+                            <h3>Find awesome hotel deals and strike a bargain wherever you go.</h3>
+                        </div>
+                        <img src='' alt='deals filter' url='filterimg' class='async' />
+                        <div id='dealsmagnifier' class='magnifier'>
+                        </div>
+                    </div>
+                    <div class='smart_content' id='quick_content' >
+                        <div>
+                            <h3>Fantastic deals at the last minute for same day or next day check-ins.</h3>
+                        </div>
+                        <img src='' alt='quickeys' url='quickimg' class='async' />
+                        <div id='quickmagnifier' class='magnifier'>
+                        </div>
+                    </div>
+                    <div class='viewport' id='smarterview'></div>
+                </div>
+            </div>
+            <div id='socialproof' class='gradientbg lovehotel'>
+                <div class='outer'>
+                    <h2>Social proof</h2>
+                    <ul class='nav'>
+                        <li class='active bestsellerstab'><span>Bestsellers</span></li>
+                        <li class='tripadvisortab' ><span>TripAdvisor Top-rated</span></li>
+                        <li class='verifiedtab' ><span>Verified Reviews</span></li>
+                    </ul>
+                    <div class='social_content active widthbox2' id='bestsellers'>
+                        <div>
+                            <h3>See what's hot and leave out what's not.</h3>
+                        </div>
+                        <img src='' alt='bestsellers' class='bestseller_main async' url='social/bestseller_main' />
+                        <img src='' alt='bestsellers' class='bestseller_over async' url='social/bestseller_over' />
+                        <img src='images/shadow2.png' alt='bestsellers' class='bestseller_shadow' />
+                        <div class='overflowgradient'></div>
+                    </div>
+                    <div class='social_content widthbox2' id='advisor' >
+                        <div>
+                            <h3>See where the hotel stands on TripAdvisor.</h3>
+                        </div>
+                        <img src='' alt='trip advisor' class='advisor_main async' url='social/advisor_main' />
+                        <img src='' alt='trip advisor' class='advisor_over async' url='social/advisor_over' />
+                        <img src='images/shadow2.png' alt='bestsellers' class='advisor_shadow' />
+                        <div class='overflowgradient'></div>
+                    </div>
+                    <div class='social_content widthbox2' id='verified'>
+                        <div>
+                            <h3>Know before you book what Cleartrippers have to say.</h3>
+                        </div>
+                        <img src='' alt='verified reviews' class='verified_main async' url='social/verified_main' />
+                        <img src='' alt='verified' class='verified_over async' url='social/verified_over' />
+                        <img src='images/shadow2.png' alt='verified' class='verified_shadow' />
+                        <div class='overflowgradient'></div>
+                    </div>
+                    <div class='viewport' id='socialview'></div>
+                </div>
+            </div>
+            <div id='betterhotelinfo' class='lovehotel'>
+                <div class='outer'>
+                    <h2>Better hotel info</h2>
+                    <ul class='nav'>
+                        <li class='active highlightstab'><span>Highlights</span></li>
+                        <li class='photostab'><span>Photos</span></li>
+                        <li class='nearbytab'><span>What's nearby</span></li>
+                        <li class='similartab'><span>Similar hotels</span></li>
+                    </ul>
+                    <div class='betterinfo_content active' id='highlights'>
+                        <h3>Get a quick overview of each hotel right up front.</h3>
+                        <img src='' alt='highlights' width='750' url='highlightsimg' class='async' />
+                        <div class='shadow'></div>
+                    </div>
+                    <div class='betterinfo_content' id='photos'>
+                        <h3>Bigger and better photos for you to pick what you need.</h3>
+                        <img src='' alt='photos' width='750' class='async' url='photosimg' />
+                        <div class='shadow'></div>
+                    </div>
+                    <div class='betterinfo_content' id='nearby' >
+                        <h3>Look around the hotel before you get there.</h3>
+                        <img src='' alt='nearby ' width='750' url='nearbyimg' class='async' />
+                        <div class='shadow'></div>
+                    </div>
+                    <div class='betterinfo_content' id='similar'>
+                        <h3 id='hwidth1'>Want something like this but not this hotel? No problem.</h3>
+                        <img src='' alt='similar hotels' width='750' url='similarimg' class='async' />
+                        <div class='shadow'></div>
+                    </div>
+                </div>
+            </div>
+            <footer>
+                <div id='footer_contents'>
+                    <div id='f_top'>
+                        <ul id='f_mainlinks'>
+                            <li><a href='#'>Cleartrip Home</a></li>
+                            <li><a href='#'>About</a></li>
+                            <li><a href='#'>Blog</a></li>
+                            <li><a href='#'>Support</a></li>
+                        </ul>
+                        <p>&copy; 2006-2013 Cleartrip Pvt. Ltd.</p>
+                        <ul id='f_sublinks'>
+                            <li><a href='#'>Privacy</a></li>
+                            <li><a href='#'>Security</a></li>
+                            <li><a href='#'>Terms of Use</a></li>
+                        </ul>
+                    </div>
+                    <div id='f_other'>
+                        <ul>
+                            <span>Other tools:</span>
+                            <li><a href='#'>Cheap air tickets</a></li>
+                            <li><a href='#'>Flight tickets</a></li>
+                            <li><a href='#'>Flight Status</a></li>
+                            <li><a href='#'>India Hotels</a></li>
+                            <li><a href='#'>IRCTC Railway Reservation</a></li>
+                            <li><a href='#'>Indian Railways</a></li>
+                            <li><a href='#'>PNR Status</a></li>
+                            <li><a href='#'>Cheap Domestic Air Tickets</a></li>
+                            <li><a href='#'>Domestic Flights</a></li>
+                            <li><a href='#'>Domestic Airlines in India</a></li>
+                            <li><a href='#'>International Air Tickets</a></li>
+                            <li><a href='#'>International Flights</a></li>
+                            <li><a href='#'>International Airlines</a></li>
+                            <li><a href='#'>Travel guide</a></li>
+                        </ul>
+                        <div id='f_social'>
+                            <span>Connect</span>
+                            <a href='http://facebook.com/cleartrip' id='f_facebook'></a>
+                            <a href='http://twitter.com/cleartrip' id='f_twitter'></a>
+                        </div>
+                        <div class='clear'></div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <div id="fb-root"></div>
+        <script src='js/combined.js'>
+        </script>
+    </body>
+</html>
